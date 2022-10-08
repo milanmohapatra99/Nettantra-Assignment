@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Uploading</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+
+    <body id="upld">
+
+         <div class="main_2">
+    <div class="reg-1">
+
+<h2 id="upl">Upload Your Documents Here</span></h2>
+
+<form action="" method="post" id="regfrm" autocomplete="off">
+
+<!-- Passport Size Photo -->
+<p id="size">
+  
+<h3>
+    Recent Passport Size Photograph: <input type="file" id="file" onchange="Filevalidation()" title="Please Enter image(.jpg/.png) format & size less than 4MB"   required>
+    </span>
+</h3>
+</p>
+    <br>
+
+<!-- HSC Marks Sheet -->
+<p id="size1">
+<h3>HSC Mark Sheet: <input type="file" id="file1" onchange="Filevalidation1()" required></span></h3>
+</p>
+    <br>
+
+<!-- SSC Mark Sheet -->
+<p id="size2">
+<h3>SSC Mark Sheet: <input type="file" id="file2" onchange="Filevalidation2()" required></span></h3>
+</p>
+<br>
+
+ <!-- Total Mark Sheet -->
+<p id="size3">
+<h3>All Semesters Marks Sheet: <input type="file" id="file3" onchange="Filevalidation3()" required></span></h3>
+</p>
+    <br><br>
+
+    <center>
+<!-- Save & Reset Button -->
+<!-- <button type="button" class="save" onclick="alert('Your documents details Submit Sucessfully')">Submit</button> -->
+<button type="submit" id="sve" class="save" onclick="myfunc()"><b>Save</b> </button>
+<input type="reset" class="clean" value="Reset"/ onclick="alert('Please Upload your documents again!')">
+
+    </center>
+    <br>
+<input type="checkbox" name="ch_box" onclick="alert('Before Proceed check again your input details.')" required> Agree and Continue    
+
+
+
+
+
+<br><br>
+<!-- Submit Button - Previous -->
+         
+
+    <input type="button" class="previous" value="<< Prev"  
+    onclick="history.back()"> 
+    <!-- <button type="previous" class="previous" onclick="history.back()"><<- Previous</button> -->
+
+    <button type="button" class="save" onclick="alert('Your documents details Submit Sucessfully')">Submit</button>
+    <!-- <button type="next" class="next" onclick="open()"><b>Next >></b> </button> -->
+
+
+<!-- Subimition Page -->
+        <div class="pop" id="pop">
+            <img src="image/right.png">
+            <h2>Thank You!!</h2>
+            <p>Your details has been successfully Submitted.</p>
+            <button type="button"onclick="close()">Ok</button>
+        </div>
+    </form>
+</div>
+    </div>
+
+<!-- Submition  -->
+
+
+    <!-- JavaScript for Upload_File Size Check for Passport-->
+<script>
+        /*File Size Validation*/
+    Filevalidation = () => {
+        const fi = document.getElementById('file');
+
+        // Checking if any file is selected.
+        if (fi.files.length > 0) {
+            for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                const fsize = fi.files.item(i).size;
+                const file = Math.round((fsize / 1024));
+                // The size of the file.
+                if (file >= 4096) 
+                {
+                    alert("File Size is too Big, Please select a file less than < 4mb");
+                } 
+                else if (file < 2048) 
+                {
+                    alert("File Size is too small, Please select a file greater than > 2mb");
+                } 
+                else 
+                {
+                    document.getElementById('size').innerHTML = '<b>'
+                    + file + '</b> KB';
+                }
+            }
+        }
+    }
+
+</script>
+
+<!-- JavaScript for Upload_File Size Check for HSC Marks Sheet-->
+<script>
+    Filevalidation1 = () => {
+        const fi = document.getElementById('file1');
+
+        // Checking if any file is selected.
+        if (fi.files.length > 0) {
+            for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                const fsize = fi.files.item(i).size;
+                const file1 = Math.round((fsize / 1024));
+                // The size of the file.
+                if (file1 >= 4096) {
+                    alert(
+                    "File Size is too Big, Please select a file less than < 4mb");
+                } else if (file1 < 10) {
+                    alert(
+                    "File Size is too small, Please select a file greater than > 10Kb");
+                } else {
+                    document.getElementById('size').innerHTML = '<b>'
+                    + file1 + '</b> KB';
+                }
+            }
+        }
+    }
+</script>
+
+
+<!-- JavaScript for Upload_File Size Check for SSC Marks Sheet-->
+<script>
+    Filevalidation2 = () => {
+        const fi = document.getElementById('file2');
+
+        // Checking if any file is selected.
+        if (fi.files.length > 0) {
+            for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                const fsize = fi.files.item(i).size;
+                const file2 = Math.round((fsize / 1024));
+                // The size of the file.
+                if (file2 >= 4096) {
+                    alert(
+                    "File Size is too Big, Please select a file less than < 4mb");
+                } else if (file2 < 10) {
+                    alert(
+                    "File Size is too small, Please select a file greater than > 10Kb");
+                } else {
+                    document.getElementById('size').innerHTML = '<b>'
+                    + file2 + '</b> KB';
+                }
+            }
+        }
+    }
+</script>
+
+
+<!-- JavaScript for Upload_File Size Check for Total Marks Sheet-->
+<script>
+    Filevalidation3 = () => {
+        const fi = document.getElementById('file3');
+
+        // Checking if any file is selected.
+        if (fi.files.length > 0) {
+            for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                const fsize = fi.files.item(i).size;
+                const file3 = Math.round((fsize / 1024));
+                // The size of the file in KB.
+                if (file3 >= 10096) {
+                    alert(
+                    "File Size is too Big, Please select a file less than < 10mb");
+                } else if (file3 < 10) {
+                    alert(
+                    "File Size is too small, Please select a file greater than > 10Kb");
+                } else {
+                    document.getElementById('size').innerHTML = '<b>'
+                    + file3 + '</b> KB';
+                }
+            }
+        }
+    }
+</script>
+
+<!-- File Validation Type -->
+<script>
+        function fileValidationType() {
+            var fileInput =
+                document.getElementById('extfile');
+             
+            var filePath = fileInput.value;
+         
+            // Allowing file type
+            var allowedExtensions =  /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+             
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type! , You must have to upload in an image format.');
+                fileInput.value = '';
+                return false;
+            }
+        }
+    </script>
+
+<!-- Submition Pages -->
+
+<!-- <script src="text/javascript">
+function upload() {
+  alert("File Uploaded Successfully");
+}
+</script>
+<script src="text/javascript">
+    function cancel() {
+      alert("Are You Sure to cancel?");
+    }
+    </script>
+<script src="text/javascript">
+    let pop = document.getElementById("pop");
+function open(){
+    pop.classList.add("open_pop");
+}
+function close(){
+    pop.classList.remove("open_pop");
+}
+</script> -->
+
+<!---------------------------Java Script localstorage-->
+<script type="text/javascript">
+    function myfunc(){
+        // event.preventDefault();
+
+        var file = document.getElementById("file").value;
+        var file1 = document.getElementById("file1").value;
+        var file2 = document.getElementById("file2").value;
+        var file3= document.getElementById("file3").value;
+
+        localStorage.setItem('file',file);
+        localStorage.setItem('file1',file1);
+        localStorage.setItem('file2',file2);
+        localStorage.setItem('file3',file3);
+    }
+</script>
+
+</body>
+
+</html>
+
+<br>
+<br>
+<div class="nav_down">
+        <div>
+         &copy; Multi-page Registration form , site designed & developed by @Milan Mohapatra...♠☻ 
+        </div>
+    </div>

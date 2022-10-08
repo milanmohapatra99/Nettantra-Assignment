@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scriptform1.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="register">
+            <h2>Registration Form</h2>
+
+   <form action="form2.html" onsubmit="return validation()" method="post"id="register" name="myForm"autocomplete="off">
+   
+    <label for="name"><b>Name</b></label><br>
+    <input type="text" title="Please Enter First Name"placeholder="First" name="name"id="name"required>
+    <input type="text" title="Please Enter Last Name" placeholder="Last" name="name1" id="name">
+    <span id="user"></span>
+ 
+    
+    <label for="dob"><b>Date Of Birth</b></label><br>
+    <input type="datetime-local" placeholder="MM/DD/YYYY" name="dob"id="dob" required><br><br>
+    <label for="name"><b>Father's Name</b></label><br>
+    <input type="text" title="Please Enter Father's Name" placeholder="First" name="name"id="fname" required>
+    <input type="text" placeholder="Last" name="name" id="fname"><br><br>
+    <label for="name"><b>Mother's Name</b></label><br>
+    <input type="text" title="Please Enter Mother's Name"placeholder="First" name="mname" id="mname"required>
+    <input type="text" placeholder="Last" name="mname"id="mname" ><br><br>
+
+    <!--Gender-->
+    <!-- <h3><p>Gender</p></h3> -->
+    <label for="gender"><b>Gender</b></label><br>
+     <input type="radio" value='1' id="gender"name="gender" required> Male
+     <input type="radio" value='2' id="gender"name="gender" required>Female<br><br>
+
+     <!--Nationality-->
+<label for="nation"><b>Nationality    </b></label>
+    
+     <select name="nationality"id="nation" required>
+  <option value="">-- select one --</option>
+  <option value="afghan">Afghan</option>
+  <option value="albanian">Albanian</option>
+  <option value="algerian">Algerian</option>
+  <option value="american">American</option>
+  <option value="andorran">Andorran</option>
+  <option value="angolan">Angolan</option>
+  <option value="antiguans">Antiguans</option>
+  <option value="argentinean">Argentinean</option>
+  <option value="armenian">Armenian</option>
+  <option value="australian">Australian</option>
+  <option value="austrian">Austrian</option>
+  <option value="azerbaijani">Azerbaijani</option>
+  <option value="bahamian">Bahamian</option>
+  <option value="bahraini">Bahraini</option>
+  <option value="bangladeshi">Bangladeshi</option>
+  <option value="barbadian">Barbadian</option>
+  <option value="barbudans">Barbudans</option>
+  <option value="batswana">Batswana</option>
+  <option value="belarusian">Belarusian</option>
+  <option value="belgian">Belgian</option>
+  <option value="belizean">Belizean</option>
+  <option value="beninese">Beninese</option>
+  <option value="bhutanese">Bhutanese</option>
+  <option value="bolivian">Bolivian</option>
+  <option value="bosnian">Bosnian</option>
+  <option value="brazilian">Brazilian</option>
+  <option value="british">British</option>
+  <option value="bruneian">Bruneian</option>
+  <option value="bulgarian">Bulgarian</option>
+  <option value="burkinabe">Burkinabe</option>
+  <option value="burmese">Burmese</option>
+  <option value="burundian">Burundian</option>
+  <option value="cambodian">Cambodian</option>
+  <option value="cameroonian">Cameroonian</option>
+  <option value="canadian">Canadian</option>
+  <option value="cape verdean">Cape Verdean</option>
+  <option value="central african">Central African</option>
+  <option value="chadian">Chadian</option>
+  <option value="chilean">Chilean</option>
+  <option value="chinese">Chinese</option>
+  <option value="colombian">Colombian</option>
+  <option value="comoran">Comoran</option>
+  <option value="congolese">Congolese</option>
+  <option value="costa rican">Costa Rican</option>
+  <option value="croatian">Croatian</option>
+  <option value="cuban">Cuban</option>
+  <option value="cypriot">Cypriot</option>
+  <option value="czech">Czech</option>
+  <option value="danish">Danish</option>
+  <option value="djibouti">Djibouti</option>
+  <option value="dominican">Dominican</option>
+  <option value="dutch">Dutch</option>
+  <option value="east timorese">East Timorese</option>
+  <option value="ecuadorean">Ecuadorean</option>
+  <option value="egyptian">Egyptian</option>
+  <option value="emirian">Emirian</option>
+  <option value="equatorial guinean">Equatorial Guinean</option>
+  <option value="eritrean">Eritrean</option>
+  <option value="estonian">Estonian</option>
+  <option value="ethiopian">Ethiopian</option>
+  <option value="fijian">Fijian</option>
+  <option value="filipino">Filipino</option>
+  <option value="finnish">Finnish</option>
+  <option value="french">French</option>
+  <option value="gabonese">Gabonese</option>
+  <option value="gambian">Gambian</option>
+  <option value="georgian">Georgian</option>
+  <option value="german">German</option>
+  <option value="ghanaian">Ghanaian</option>
+  <option value="greek">Greek</option>
+  <option value="grenadian">Grenadian</option>
+  <option value="guatemalan">Guatemalan</option>
+  <option value="guinea-bissauan">Guinea-Bissauan</option>
+  <option value="guinean">Guinean</option>
+  <option value="guyanese">Guyanese</option>
+  <option value="haitian">Haitian</option>
+  <option value="herzegovinian">Herzegovinian</option>
+  <option value="honduran">Honduran</option>
+  <option value="hungarian">Hungarian</option>
+  <option value="icelander">Icelander</option>
+  <option value="indian">Indian</option>
+  <option value="indonesian">Indonesian</option>
+  <option value="iranian">Iranian</option>
+  <option value="iraqi">Iraqi</option>
+  <option value="irish">Irish</option>
+  <option value="israeli">Israeli</option>
+  <option value="italian">Italian</option>
+  <option value="ivorian">Ivorian</option>
+  <option value="jamaican">Jamaican</option>
+  <option value="japanese">Japanese</option>
+  <option value="jordanian">Jordanian</option>
+  <option value="kazakhstani">Kazakhstani</option>
+  <option value="kenyan">Kenyan</option>
+  <option value="kittian and nevisian">Kittian and Nevisian</option>
+  <option value="kuwaiti">Kuwaiti</option>
+  <option value="kyrgyz">Kyrgyz</option>
+  <option value="laotian">Laotian</option>
+  <option value="latvian">Latvian</option>
+  <option value="lebanese">Lebanese</option>
+  <option value="liberian">Liberian</option>
+  <option value="libyan">Libyan</option>
+  <option value="liechtensteiner">Liechtensteiner</option>
+  <option value="lithuanian">Lithuanian</option>
+  <option value="luxembourger">Luxembourger</option>
+  <option value="macedonian">Macedonian</option>
+  <option value="malagasy">Malagasy</option>
+  <option value="malawian">Malawian</option>
+  <option value="malaysian">Malaysian</option>
+  <option value="maldivan">Maldivan</option>
+  <option value="malian">Malian</option>
+  <option value="maltese">Maltese</option>
+  <option value="marshallese">Marshallese</option>
+  <option value="mauritanian">Mauritanian</option>
+  <option value="mauritian">Mauritian</option>
+  <option value="mexican">Mexican</option>
+  <option value="micronesian">Micronesian</option>
+  <option value="moldovan">Moldovan</option>
+  <option value="monacan">Monacan</option>
+  <option value="mongolian">Mongolian</option>
+  <option value="moroccan">Moroccan</option>
+  <option value="mosotho">Mosotho</option>
+  <option value="motswana">Motswana</option>
+  <option value="mozambican">Mozambican</option>
+  <option value="namibian">Namibian</option>
+  <option value="nauruan">Nauruan</option>
+  <option value="nepalese">Nepalese</option>
+  <option value="new zealander">New Zealander</option>
+  <option value="ni-vanuatu">Ni-Vanuatu</option>
+  <option value="nicaraguan">Nicaraguan</option>
+  <option value="nigerien">Nigerien</option>
+  <option value="north korean">North Korean</option>
+  <option value="northern irish">Northern Irish</option>
+  <option value="norwegian">Norwegian</option>
+  <option value="omani">Omani</option>
+  <option value="pakistani">Pakistani</option>
+  <option value="palauan">Palauan</option>
+  <option value="panamanian">Panamanian</option>
+  <option value="papua new guinean">Papua New Guinean</option>
+  <option value="paraguayan">Paraguayan</option>
+  <option value="peruvian">Peruvian</option>
+  <option value="polish">Polish</option>
+  <option value="portuguese">Portuguese</option>
+  <option value="qatari">Qatari</option>
+  <option value="romanian">Romanian</option>
+  <option value="russian">Russian</option>
+  <option value="rwandan">Rwandan</option>
+  <option value="saint lucian">Saint Lucian</option>
+  <option value="salvadoran">Salvadoran</option>
+  <option value="samoan">Samoan</option>
+  <option value="san marinese">San Marinese</option>
+  <option value="sao tomean">Sao Tomean</option>
+  <option value="saudi">Saudi</option>
+  <option value="scottish">Scottish</option>
+  <option value="senegalese">Senegalese</option>
+  <option value="serbian">Serbian</option>
+  <option value="seychellois">Seychellois</option>
+  <option value="sierra leonean">Sierra Leonean</option>
+  <option value="singaporean">Singaporean</option>
+  <option value="slovakian">Slovakian</option>
+  <option value="slovenian">Slovenian</option>
+  <option value="solomon islander">Solomon Islander</option>
+  <option value="somali">Somali</option>
+  <option value="south african">South African</option>
+  <option value="south korean">South Korean</option>
+  <option value="spanish">Spanish</option>
+  <option value="sri lankan">Sri Lankan</option>
+  <option value="sudanese">Sudanese</option>
+  <option value="surinamer">Surinamer</option>
+  <option value="swazi">Swazi</option>
+  <option value="swedish">Swedish</option>
+  <option value="swiss">Swiss</option>
+  <option value="syrian">Syrian</option>
+  <option value="taiwanese">Taiwanese</option>
+  <option value="tajik">Tajik</option>
+  <option value="tanzanian">Tanzanian</option>
+  <option value="thai">Thai</option>
+  <option value="togolese">Togolese</option>
+  <option value="tongan">Tongan</option>
+  <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+  <option value="tunisian">Tunisian</option>
+  <option value="turkish">Turkish</option>
+  <option value="tuvaluan">Tuvaluan</option>
+  <option value="ugandan">Ugandan</option>
+  <option value="ukrainian">Ukrainian</option>
+  <option value="uruguayan">Uruguayan</option>
+  <option value="uzbekistani">Uzbekistani</option>
+  <option value="venezuelan">Venezuelan</option>
+  <option value="vietnamese">Vietnamese</option>
+  <option value="welsh">Welsh</option>
+  <option value="yemenite">Yemenite</option>
+  <option value="zambian">Zambian</option>
+  <option value="zimbabwean">Zimbabwean</option>
+</select>
+<br><br>
+
+    <label for="textarea"><b>Home Address</b></label><br>
+    <textarea id="add" title="Please Enter Address Details."  name="add" placeholder="Unit :4, Bhubaneswar,Pin" required>
+    </textarea>
+    <br><br>
+
+    <input type="text" placeholder="City"id="cname" name="add" required>
+    <select id="country" name="country" required>
+        <option value="country">Select Your Country</option>
+        <option value="africa">Africa</option>
+        <option value="australia">Australia</option>
+        <option value="bhutan">Bhutan</option>
+        <option value="canada">Canada</option>
+        <option value="france">France</option>
+        <option value="india">India</option>
+        <option value="japan">Japan</option>
+        <option value="korea">Korea</option>
+        <option value="usa">USA</option>
+      </select><br><br>
+
+      <!-- Mail Id: -->
+
+    <label for="email"><b>Provied a Valid Email Id </b></label><br>
+    <input type="email" name="email" id="email" autocomplete="on" size="10" title="Please Provied a valid Email Id" placeholder="abc@gmail.com" required><br><br>
+
+      <label for="hphn"><b>Telephone-Home</b></label><br> 
+      <input type="tel" pattern="[0-9]{10}" title="Please Enter Correct Mobile Number" placeholder="000 000 0000" name="hphn"id="hphn"size="10" required><br><br>
+      <label for="hphn"><b>Telephone-Mobile</b></label><br> 
+      <input type="tel" pattern="[0-9]{10}" title="Please Enter Correct Mobile Number" placeholder="000 000 0000" name="hphn"id="mphn" required><br><br>
+
+      <!----------------SAve-->
+      <button type="save" id="sve" class="save" onclick="saveData()"><b>Save</b> </button>
+
+<!--Reset Button -->
+   <input type="reset" class="clean1" value="Reset"/ onclick="alert('Please fill your details again!')">
+
+<!-- <button type="submit">Submit</button> -->
+<button type="next"  class="next1" onclick="next()"><b>Next >></b> </button>
+
+   </form> 
+</div>
+</div>
+
+</body>
+<!---------------------------Java Script localstorage-->
+<script type="text/javascript">
+  function saveData(){
+  let name,fname,mname,dob,gender,nation,add,country,email,hphn,mphn;
+  name = document.getElementById("name").value;
+  fname = document.getElementById("fname").value;
+  mname = document.getElementById("mname").value;
+
+  dob = document.getElementById("dob").value;
+ gender = document.getElementById("gender").value;
+ nation=document.getElementById("nation").value;
+ add=document.getElementById("add").value;
+ country=document.getElementById("country").value;
+email=document.getElementById("email").value;
+ hphn=document.getElementById("hphn").value;
+ mphn=document.getElementById("mphn").value;
+
+ gender.checked ? gender = "Male" : gender = "Female";
+
+ localStorage.setItem("name",name)
+ localStorage.setItem("fname",fname)
+ localStorage.setItem("mname",mname)
+
+ localStorage.setItem("dob",dob)
+ localStorage.setItem("gender",gender)
+ localStorage.setItem("nationality",nation)
+ localStorage.setItem("homeaddr",add)
+ localStorage.setItem("country",country)
+ localStorage.setItem("email",email)
+ localStorage.setItem("hphn",hphn)
+ localStorage.setItem("mphn",mphn)
+}
+ </script>
+ 
+ </html>
+<br>
+<br>
+
+ <div class="nav_down">
+  <div>
+   &copy; Multi-page Registration form , site designed & developed by @Milan Mohapatra...♠☻ 
+  </div>
+</div>

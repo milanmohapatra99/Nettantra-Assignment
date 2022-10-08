@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body id="edufrm">
+  <div class="main_1">
+    <div class="reg">
+      <h2 id="hed">Education Registration Form</h2>
+   <form action="form3.html" method="post"id="reg" autocomplete="off">
+    
+    <label for="instname"><b>HSC Institution Name</b></label><br>
+    <input type="text" placeholder="Enter Institution Name" id="instname"name="name" required><br><br>
+
+    <label for="board"><b>HSC Board</b></label><br>
+    <select id="board" name="board">
+      <option value="board">Select Your Board</option>
+      <option value="cbsc">CBSC</option>
+      <option value="icsc">ICSC</option>
+      <option value="state">State Board</option>
+       </select><br><br>
+
+      <!-- Total Marks -->
+       <label for='Tmarks'><b>Total Marks In HSC Board</b></label>
+       <input type="number"  name="Tmarks" id="ToMarks" title="Please enter Total Marks of HSC-Board" placeholder="600" width="5%" required>
+
+
+        <!-- Secure Marks -->
+       <label for="SMarks"><b>Total Secured Marks In HSC Board</b></label>
+       <input type="number" name="SMarks" id="SecMarks" title="Please Enter secured marks" placeholder="500" required>
+
+       <!-- Total Score in % -->
+      <label for="TotScore"><b>Score in HSC in Percentag</b></label>
+      <input type="text" placeholder="%" title="Total Percentage %" name="score" id="marksPercentage">
+     <br><br>
+
+
+     <!-- SSC Board -->
+     <label for="board"><b>SSC Board</b></label><br>
+     <select id="sboard" name="board">
+      <option value="board">Select Your Board</option>
+      <option value="cbsc">CBSC</option>
+      <option value="icsc">ICSC</option>
+      <option value="state">State board</option>
+       </select><br><br>
+
+      <!-- Total Marks -->
+      <label for='Tmarks'><b>Total Marks In SSC Board</b></label>
+      <input type="number"   name="Tmarks" id="ToMarksSSC" title="Please enter Total Marks of SSC-Board" placeholder="600" width="5%" required>
+
+      <!-- Secure Marks -->
+      <label for="SMarks"><b>Total Secured Marks In SSC Board</b></label></label> 
+      <input type="number" name="SMarks" id="SecMarksSSC" title="Please Enter secured marks" placeholder="500" required>
+
+      <!-- Total Score in % -->
+      <label for="TotScore"><b>Score in SSC in Percentag</b></label>
+      <input type="text" placeholder="%" title="Total Percentage %" name="score" id="marksPercentageSSC">
+     <br><br>
+
+     <label for="edu"><b>Currently pursing</b></label><br>
+    <input type="text" placeholder="Current Education" name="edu" id="cinstname"required><br><br>
+    <label for="inst"><b>Currently Educational Institute Name</b></label><br>
+    <input type="text" placeholder="Institute Name" name="inst"id="cuinstname" required><br><br>
+    
+    <label for="score"><b>Overall Percentage</b></label><br>
+    <input type="text" placeholder="Percentage"  name="score"id="ovinstname" required><br><br>
+      <label for="back"><b>Current Backlog if any</b></label><br> 
+      <input type="radio" value='1' name="back"id="back"> Yes
+      <input type="radio" value='2' name="back"id="back">No<br><br><br>
+
+  <input type="button" class="previous" value="<< Prev"onclick="history.back()"> 
+  <button type="save" id="sve" class="save" onclick="SaveData()"><b>Save</b> </button>
+      <button type="next" class="next2" onclick="next()"><b>Next >></b> </button>
+     
+      
+
+       </form> 
+</div>
+</div>
+<!---------------------------Java Script localstorage-->
+<script type="text/javascript">
+  function SaveData(){
+  let instname,board,ToMarks,SecMarks,marksPercentage,sboard,ToMarksSSC,SecMarksSSC,marksPercentageSSC,cinstname,cuinstname,ovinstname,back;
+  instname = document.getElementById("instname").value;
+  board = document.getElementById("board").value;
+  ToMarks = document.getElementById("ToMarks").value;
+  SecMarks = document.getElementById("SecMarks").value;
+  marksPercentage = document.getElementById("marksPercentage").value;
+  sboard = document.getElementById("sboard").value;
+  ToMarksSSC = document.getElementById("ToMarksSSC").value;
+  SecMarksSSC = document.getElementById("SecMarksSSC").value;
+  marksPercentageSSC = document.getElementById("marksPercentageSSC").value;
+  cinstname=document.getElementById("cinstname").value;
+  cuinstname=document.getElementById("cuinstname").value;
+  ovinstname=document.getElementById("ovinstname").value;
+  back=document.getElementById("back").value;
+
+ localStorage.setItem("instname",instname)
+ localStorage.setItem("board",board)
+ localStorage.setItem("ToMarks",ToMarks)
+
+ localStorage.setItem("SecMarks",SecMarks)
+ localStorage.setItem("marksPercentage",marksPercentage)
+ localStorage.setItem("sboard",sboard)
+ localStorage.setItem("ToMarksSSC",ToMarksSSC)
+ localStorage.setItem("SecMarksSSC",SecMarksSSC)
+ localStorage.setItem("marksPercentageSSC",marksPercentageSSC)
+ localStorage.setItem("cinstname",cinstname)
+ localStorage.setItem("cuinstname",cuinstname)
+ localStorage.setItem("ovinstname",ovinstname)
+ localStorage.setItem("back",back)
+}
+ </script>
+<!-- HSC JavaScript -->
+<script type="text/javascript">
+     
+document.addEventListener('focusout', function(event){
+    marksPresentagae()
+});
+ 
+function marksPresentagae() {
+
+  let totalMarksInput = document.getElementById("ToMarks");
+  let obtainedMarksInput = document.getElementById("SecMarks");
+  let marksPercentageMarksInput = document.getElementById("marksPercentage");
+
+  /*SSC*/
+  let totalMarksInputSsc = document.getElementById("ToMarksSSC");
+  let obtainedMarksInputSsc = document.getElementById("SecMarksSSC");
+  let marksPercentageMarksInputSsc = document.getElementById("marksPercentageSSC");
+
+  totalMarks = totalMarksInput.value
+  obtainedMarks= obtainedMarksInput.value
+    
+
+  if(totalMarks>0 && obtainedMarks>0){
+     let tp = (obtainedMarks/totalMarks)*100;
+     marksPercentageMarksInput.value=tp.toFixed(2);
+  }else{
+    marksPercentageMarksInput.value=""
+    }
+ }
+</script>
+
+<!-- SSC JavaScript -->
+<script type="text/javascript">
+     
+document.addEventListener('focusout', function(event){
+    marksPresentagaes()
+});
+ 
+function marksPresentagaes() {
+
+  let totalMarksInput = document.getElementById("ToMarksSSC");
+  let obtainedMarksInput = document.getElementById("SecMarksSSC");
+  let marksPercentageMarksInput = document.getElementById("marksPercentageSSC");
+
+  totalMarks = totalMarksInput.value
+  obtainedMarks= obtainedMarksInput.value
+    
+  if(totalMarks>0 && obtainedMarks>0){
+     let tp = (obtainedMarks/totalMarks)*100;
+     marksPercentageMarksInput.value=tp.toFixed(2);
+  }else{
+    marksPercentageMarksInput.value=""
+    }
+ }
+</script>
+
+</body>
+</html>
+<br>
+<br>
+<div class="nav_down">
+        <div>
+         &copy; Multi-page Registration form , site designed & developed by @Milan Mohapatra...♠☻ 
+        </div>
+    </div>
